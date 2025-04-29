@@ -1,1 +1,43 @@
 @import "tailwindcss";
+
+/* Custom color utilities */
+.text-expensify-blue {
+  color: #1778FB;
+}
+
+.text-expensify-green {
+  color: #2ECB6E;
+}
+
+.text-expensify-dark {
+  color: #17253D;
+}
+
+.text-expensify-light {
+  color: #F8FAFB;
+}
+
+.text-expensify-gray {
+  color: #8B9CB1;
+}
+
+/* Background color utilities */
+.bg-expensify-blue {
+  background-color: #1778FB;
+}
+
+.bg-expensify-green {
+  background-color: #2ECB6E;
+}
+
+.bg-expensify-dark {
+  background-color: #17253D;
+}
+
+.bg-expensify-light {
+  background-color: #F8FAFB;
+}
+
+.bg-expensify-gray {
+  background-color: #8B9CB1;
+}

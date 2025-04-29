@@ -41,7 +41,7 @@ const Hero = () => {
                 <p className="text-white mt-2">Server running on port 3000</p>
                 <p className="text-white">Connected to database</p>
                 <p className="text-green-400 mt-4">$ curl localhost:3000/api/status</p>
-                <p className="text-white mt-2">{"{"} "status": "online", "version": "1.0.3" {"}"}</p>
+                <p className="text-white mt-2">{"{"} "status": "online", "version": "3.0.7" {"}"}</p>
                 <p className="text-expensify-green mt-4 animate-pulse flex items-center">
                   <span className="inline-block w-2 h-5 bg-expensify-green mr-2"></span>_
                 </p>
