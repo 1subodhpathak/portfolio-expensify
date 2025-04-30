@@ -6,7 +6,7 @@ interface ContactForm {
   message: string;
 }
 
-const Contact: React.FC = () => {
+const Contact = () => {
   const [formData, setFormData] = useState<ContactForm>({
     name: '',
     email: '',
@@ -28,97 +28,118 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-16 bg-expensify-dark text-black">
+    <section id="contact" className="bg-expensify-light py-20">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">
-          <span className="text-black">Get in</span>
-          <span className="text-expensify-green"> Touch</span>
+        <h2 className="text-3xl md:text-4xl font-bold text-expensify-darkgreen mb-12 text-center">
+          Let's Connect
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {/* Contact Information */}
-          <div className="space-y-6">
-            <h3 className="text-2xl font-semibold mb-4">Contact Information</h3>
-            
-            <div className="flex items-center space-x-4">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-expensify-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-              <a href="mailto:contact@example.com" className="hover:text-expensify-green transition-colors">
-                contact@example.com
-              </a>
+        <div className="max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-expensify-darkgreen rounded-lg p-8">
+              <h3 className="text-xl font-semibold text-expensify-green mb-6">
+                Contact Information
+              </h3>
+              <div className="space-y-4">
+                <div className="flex items-center">
+                  <span className="text-expensify-green mr-3">📧</span>
+                  <a 
+                    href="mailto:your.email@example.com" 
+                    className="text-expensify-light hover:text-expensify-green transition duration-300"
+                  >
+                    your.email@example.com
+                  </a>
+                </div>
+                <div className="flex items-center">
+                  <span className="text-expensify-green mr-3">🔗</span>
+                  <a 
+                    href="https://linkedin.com/in/yourprofile" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-expensify-light hover:text-expensify-green transition duration-300"
+                  >
+                    LinkedIn Profile
+                  </a>
+                </div>
+                <div className="flex items-center">
+                  <span className="text-expensify-green mr-3">💻</span>
+                  <a 
+                    href="https://github.com/yourusername" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-expensify-light hover:text-expensify-green transition duration-300"
+                  >
+                    GitHub Profile
+                  </a>
+                </div>
+              </div>
+
+              <div className="mt-8">
+                <h4 className="text-expensify-green font-medium mb-4">How I Found Expensify</h4>
+                <p className="text-expensify-light opacity-90">
+                  I discovered Expensify through [source] and was immediately drawn to the company's 
+                  mission of simplifying expense management. The technical challenges and innovative 
+                  approach to solving real-world problems really resonated with me.
+                </p>
+              </div>
             </div>
 
-            <div className="flex items-center space-x-4">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-expensify-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-              </svg>
-              <span>+1 (555) 123-4567</span>
-            </div>
-
-            <div className="flex items-center space-x-4">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-expensify-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-              </svg>
-              <span>San Francisco, CA</span>
+            <div className="bg-expensify-darkgreen rounded-lg p-8">
+              <h3 className="text-xl font-semibold text-expensify-green mb-6">
+                Send a Message
+              </h3>
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div>
+                  <label className="block text-expensify-light mb-2" htmlFor="name">
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="w-full bg-expensify-buttonGreen bg-opacity-50 border border-expensify-green rounded-md px-4 py-2 text-expensify-light focus:outline-none focus:ring-2 focus:ring-expensify-green"
+                    placeholder="Your name"
+                  />
+                </div>
+                <div>
+                  <label className="block text-expensify-light mb-2" htmlFor="email">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="w-full bg-expensify-buttonGreen bg-opacity-50 border border-expensify-green rounded-md px-4 py-2 text-expensify-light focus:outline-none focus:ring-2 focus:ring-expensify-green"
+                    placeholder="your.email@example.com"
+                  />
+                </div>
+                <div>
+                  <label className="block text-expensify-light mb-2" htmlFor="message">
+                    Message
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    rows={4}
+                    className="w-full bg-expensify-buttonGreen bg-opacity-50 border border-expensify-green rounded-md px-4 py-2 text-expensify-light focus:outline-none focus:ring-2 focus:ring-expensify-green"
+                    placeholder="Your message"
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  className="w-full bg-expensify-green text-expensify-darkgreen font-medium py-3 px-6 rounded-md hover:bg-opacity-90 transition duration-300"
+                >
+                  Send Message
+                </button>
+              </form>
             </div>
           </div>
-
-          {/* Contact Form */}
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium mb-2">
-                Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                className="w-full px-4 py-2 rounded-lg bg-white/10 border border-white/20 focus:border-expensify-green focus:outline-none focus:ring-1 focus:ring-expensify-green"
-                required
-              />
-            </div>
-
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium mb-2">
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                className="w-full px-4 py-2 rounded-lg bg-white/10 border border-white/20 focus:border-expensify-green focus:outline-none focus:ring-1 focus:ring-expensify-green"
-                required
-              />
-            </div>
-
-            <div>
-              <label htmlFor="message" className="block text-sm font-medium mb-2">
-                Message
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                rows={4}
-                className="w-full px-4 py-2 rounded-lg bg-white/10 border border-white/20 focus:border-expensify-green focus:outline-none focus:ring-1 focus:ring-expensify-green"
-                required
-              ></textarea>
-            </div>
-
-            <button
-              type="submit"
-              className="w-full bg-expensify-green text-black font-medium py-2 px-4 rounded-lg hover:bg-expensify-green/90 transition-colors"
-            >
-              Send Message
-            </button>
-          </form>
         </div>
       </div>
     </section>

@@ -20,6 +20,12 @@
 .text-expensify-gray {
   color: #8B9CB1;
 }
+.text-expensify-darkgreen {
+  color: #061B09;
+}
+.text-expensify-buttonGreen {
+  color: #1A3D32;
+}
 
 /* Background color utilities */
 .bg-expensify-blue {
@@ -40,4 +46,12 @@
 
 .bg-expensify-gray {
   background-color: #8B9CB1;
+}
+
+.bg-expensify-darkgreen {
+  background-color: #061B09;
+}
+
+.bg-expensify-buttonGreen {
+  background-color: #1A3D32;
 }
