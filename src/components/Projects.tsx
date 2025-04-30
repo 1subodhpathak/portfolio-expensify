@@ -15,7 +15,7 @@ interface Project {
 }
 
 const Projects = () => {
-  const [filter, setFilter] = useState<'all' | 'backend' | 'fullstack' | 'api'>('all');
+  const [filter] = useState<'all' | 'backend' | 'fullstack' | 'api'>('all');
   
   const projects: Project[] = [
     {

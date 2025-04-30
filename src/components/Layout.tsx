@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import EasterEgg from './EasterEgg';
-import Hero from './Hero';
+// import Hero from './Hero';
 import About from './About';
 import Skills from './Skills';
 import Projects from './Projects';
