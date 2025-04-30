@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Header from './Header';
-import Footer from './Footer';
+// import Footer from './Footer';
 import EasterEgg from './EasterEgg';
 import Hero from './Hero';
 import About from './About';
@@ -139,7 +139,7 @@ const Layout = () => {
         )}
       </div>
       
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

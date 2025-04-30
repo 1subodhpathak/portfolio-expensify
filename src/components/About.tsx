@@ -1,84 +1,96 @@
 // src/components/About.tsx
 const About = () => {
   return (
-    <section id="about" className="bg-expensify-darkgreen py-20">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-expensify-light mb-12 text-center">
-          About Me
-        </h2>
-        
-        <div className="flex flex-col md:flex-row gap-10 max-w-6xl mx-auto">
-          <div className="md:w-1/2">
-            <div className="bg-expensify-buttonGreen bg-opacity-50 rounded-lg p-8">
-              <h3 className="text-xl font-semibold mb-6 text-expensify-green">Backend-Focused Full Stack Engineer</h3>
-              <div className="space-y-4">
-                <p className="text-expensify-light opacity-90">
-                  I'm a passionate developer with 3+ years of professional experience in backend development,
-                  specializing in APIs, database optimization, and system architecture. I love solving 
-                  real-world problems through clean, efficient code.
+    <section id="about" className="bg-expensify-darkgreen py-24">
+      <div className="container mx-auto px-6">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold text-expensify-light mb-6 text-center">
+            About Me
+          </h2>
+          <p className="text-expensify-light text-center mb-16 max-w-3xl mx-auto opacity-90">
+            A backend-focused engineer passionate about building scalable financial solutions
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div className="bg-expensify-buttonGreen bg-opacity-30 rounded-xl p-8 border border-expensify-green">
+              <h3 className="text-2xl font-semibold mb-6 text-expensify-green">Professional Journey</h3>
+              <div className="space-y-6">
+                <p className="text-expensify-light leading-relaxed">
+                  I'm a backend-focused engineer with 3+ years of experience in building robust systems
+                  and optimizing APIs. My expertise lies in creating efficient, scalable solutions
+                  that handle complex business logic and high-volume transactions.
                 </p>
-                <p className="text-expensify-light opacity-90">
-                  While my expertise lies in backend technologies, I have solid experience with 
-                  frontend development including React and React Native, making me a versatile 
-                  full stack developer who can work across the entire technology stack.
+                <p className="text-expensify-light leading-relaxed">
+                  With a strong foundation in PHP and Java, coupled with modern technologies,
+                  I specialize in developing enterprise-grade applications that prioritize
+                  performance, security, and maintainability.
                 </p>
-                <p className="text-expensify-light opacity-90">
-                  I'm particularly interested in joining Expensify to help revolutionize how people 
-                  manage their expenses by building efficient systems and automating processes.
+                <p className="text-expensify-light leading-relaxed">
+                  I'm particularly drawn to Expensify's mission of revolutionizing expense management,
+                  and I'm excited about contributing to the backend systems that power this transformation.
                 </p>
               </div>
             </div>
-          </div>
-          
-          <div className="md:w-1/2">
-            <div className="bg-expensify-buttonGreen bg-opacity-50 rounded-lg p-8">
-              <h3 className="text-xl font-semibold mb-6 text-expensify-green">What I Bring to Expensify</h3>
-              
-              <div className="space-y-6">
-                <div className="flex gap-4">
+            
+            <div className="bg-expensify-buttonGreen bg-opacity-30 rounded-xl p-8 border border-expensify-green">
+              <h3 className="text-2xl font-semibold mb-6 text-expensify-green">Core Strengths</h3>
+              <div className="space-y-8">
+                <div className="flex gap-6">
                   <div className="flex-shrink-0">
-                    <div className="w-10 h-10 bg-expensify-green rounded-lg flex items-center justify-center text-expensify-darkgreen font-bold">1</div>
+                    <div className="w-12 h-12 bg-expensify-green rounded-xl flex items-center justify-center">
+                      <span className="text-expensify-darkgreen text-xl font-bold">1</span>
+                    </div>
                   </div>
                   <div>
-                    <h4 className="font-medium text-expensify-green mb-2">API Optimization Expert</h4>
-                    <p className="text-expensify-light opacity-90">
-                      Experience optimizing various APIs and building high-performance endpoints that scale.
+                    <h4 className="text-xl font-medium text-expensify-green mb-2">API Architecture</h4>
+                    <p className="text-expensify-light leading-relaxed">
+                      Extensive experience in designing, building, and optimizing scalable APIs
+                      that handle millions of requests efficiently.
                     </p>
                   </div>
                 </div>
                 
-                <div className="flex gap-4">
+                <div className="flex gap-6">
                   <div className="flex-shrink-0">
-                    <div className="w-10 h-10 bg-expensify-green rounded-lg flex items-center justify-center text-expensify-darkgreen font-bold">2</div>
+                    <div className="w-12 h-12 bg-expensify-green rounded-xl flex items-center justify-center">
+                      <span className="text-expensify-darkgreen text-xl font-bold">2</span>
+                    </div>
                   </div>
                   <div>
-                    <h4 className="font-medium text-expensify-green mb-2">Cross-Stack Feature Development</h4>
-                    <p className="text-expensify-light opacity-90">
-                      Skilled at building and maintaining features like accounting integrations and advanced automation systems.
+                    <h4 className="text-xl font-medium text-expensify-green mb-2">System Design</h4>
+                    <p className="text-expensify-light leading-relaxed">
+                      Skilled at architecting robust backend systems with a focus on scalability,
+                      performance, and maintainability.
                     </p>
                   </div>
                 </div>
                 
-                <div className="flex gap-4">
+                <div className="flex gap-6">
                   <div className="flex-shrink-0">
-                    <div className="w-10 h-10 bg-expensify-green rounded-lg flex items-center justify-center text-expensify-darkgreen font-bold">3</div>
+                    <div className="w-12 h-12 bg-expensify-green rounded-xl flex items-center justify-center">
+                      <span className="text-expensify-darkgreen text-xl font-bold">3</span>
+                    </div>
                   </div>
                   <div>
-                    <h4 className="font-medium text-expensify-green mb-2">Problem Solver & Automator</h4>
-                    <p className="text-expensify-light opacity-90">
-                      Natural problem solver who creates automated solutions that scale efficiently with growing user demands.
+                    <h4 className="text-xl font-medium text-expensify-green mb-2">Database Optimization</h4>
+                    <p className="text-expensify-light leading-relaxed">
+                      Expert in database design, query optimization, and implementing efficient
+                      data storage solutions.
                     </p>
                   </div>
                 </div>
                 
-                <div className="flex gap-4">
+                <div className="flex gap-6">
                   <div className="flex-shrink-0">
-                    <div className="w-10 h-10 bg-expensify-green rounded-lg flex items-center justify-center text-expensify-darkgreen font-bold">4</div>
+                    <div className="w-12 h-12 bg-expensify-green rounded-xl flex items-center justify-center">
+                      <span className="text-expensify-darkgreen text-xl font-bold">4</span>
+                    </div>
                   </div>
                   <div>
-                    <h4 className="font-medium text-expensify-green mb-2">Collaborative Communicator</h4>
-                    <p className="text-expensify-light opacity-90">
-                      Strong communication skills in code and interpersonal interactions, ready to share knowledge and grow with the team.
+                    <h4 className="text-xl font-medium text-expensify-green mb-2">Technical Leadership</h4>
+                    <p className="text-expensify-light leading-relaxed">
+                      Strong communicator who excels at collaborating with teams and mentoring
+                      other developers.
                     </p>
                   </div>
                 </div>

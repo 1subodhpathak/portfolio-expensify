@@ -1,119 +1,125 @@
 const Skills = () => {
   const skills = {
     backend: [
-      { name: "Node.js", level: 90 },
-      { name: "Python", level: 85 },
-      { name: "Go", level: 75 },
-      { name: "PostgreSQL", level: 85 },
-      { name: "MongoDB", level: 80 },
-      { name: "Redis", level: 75 }
+      { name: "PHP", level: 90 },
+      { name: "Java", level: 85 },
+      { name: "Node.js", level: 85 },
+      { name: "PostgreSQL", level: 90 },
+      { name: "Redis", level: 85 },
+      { name: "System Architecture", level: 88 }
+    ],
+    apis: [
+      { name: "RESTful APIs", level: 92 },
+      { name: "API Design", level: 88 },
+      { name: "API Security", level: 85 },
+      { name: "API Documentation", level: 90 },
+      { name: "GraphQL", level: 82 }
+    ],
+    infrastructure: [
+      { name: "Docker", level: 85 },
+      { name: "AWS", level: 80 },
+      { name: "CI/CD", level: 85 },
+      { name: "Performance Optimization", level: 88 }
     ],
     frontend: [
       { name: "React", level: 85 },
-      { name: "TypeScript", level: 80 },
-      { name: "React Native", level: 75 },
-      { name: "Tailwind CSS", level: 85 },
-      { name: "Redux", level: 80 }
-    ],
-    devops: [
-      { name: "Docker", level: 80 },
-      { name: "AWS", level: 75 },
-      { name: "CI/CD", level: 70 },
-      { name: "Kubernetes", level: 65 }
-    ],
-    other: [
-      { name: "Git", level: 90 },
-      { name: "REST APIs", level: 90 },
-      { name: "GraphQL", level: 75 },
-      { name: "System Design", level: 80 }
+      { name: "TypeScript", level: 82 },
+      { name: "React Native", level: 78 },
+      { name: "State Management", level: 85 }
     ]
   };
 
   return (
-    <section id="skills" className="bg-expensify-light py-20">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-expensify-darkgreen mb-12 text-center">
-          Technical Skills
-        </h2>
+    <section id="skills" className="bg-expensify-darkgreen py-24">
+      <div className="container mx-auto px-6">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold text-expensify-light mb-6 text-center">
+            Technical Expertise
+          </h2>
+          <p className="text-expensify-light text-center mb-16 max-w-3xl mx-auto opacity-90">
+            Specialized in backend development with a focus on building scalable systems,
+            optimizing APIs, and creating robust enterprise solutions.
+          </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          <div className="bg-expensify-darkgreen rounded-lg p-8">
-            <h3 className="text-xl font-semibold mb-6 text-expensify-green">Backend Development</h3>
-            <div className="space-y-4">
-              {skills.backend.map((skill, index) => (
-                <div key={index}>
-                  <div className="flex justify-between mb-1">
-                    <span className="text-expensify-light">{skill.name}</span>
-                    <span className="text-expensify-green">{skill.level}%</span>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div className="bg-expensify-buttonGreen bg-opacity-30 rounded-xl p-8 border border-expensify-green">
+              <h3 className="text-2xl font-semibold mb-8 text-expensify-green">Backend Development</h3>
+              <div className="space-y-6">
+                {skills.backend.map((skill, index) => (
+                  <div key={index}>
+                    <div className="flex justify-between mb-2">
+                      <span className="text-expensify-light text-lg">{skill.name}</span>
+                      <span className="text-expensify-green">{skill.level}%</span>
+                    </div>
+                    <div className="w-full bg-expensify-darkgreen rounded-full h-2.5">
+                      <div 
+                        className="bg-expensify-green h-2.5 rounded-full transition-all duration-500"
+                        style={{ width: `${skill.level}%` }}
+                      />
+                    </div>
                   </div>
-                  <div className="w-full bg-expensify-buttonGreen rounded-full h-2">
-                    <div 
-                      className="bg-expensify-green h-2 rounded-full transition-all duration-500"
-                      style={{ width: `${skill.level}%` }}
-                    />
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
 
-          <div className="bg-expensify-darkgreen rounded-lg p-8">
-            <h3 className="text-xl font-semibold mb-6 text-expensify-green">Frontend Development</h3>
-            <div className="space-y-4">
-              {skills.frontend.map((skill, index) => (
-                <div key={index}>
-                  <div className="flex justify-between mb-1">
-                    <span className="text-expensify-light">{skill.name}</span>
-                    <span className="text-expensify-green">{skill.level}%</span>
+            <div className="bg-expensify-buttonGreen bg-opacity-30 rounded-xl p-8 border border-expensify-green">
+              <h3 className="text-2xl font-semibold mb-8 text-expensify-green">API Development</h3>
+              <div className="space-y-6">
+                {skills.apis.map((skill, index) => (
+                  <div key={index}>
+                    <div className="flex justify-between mb-2">
+                      <span className="text-expensify-light text-lg">{skill.name}</span>
+                      <span className="text-expensify-green">{skill.level}%</span>
+                    </div>
+                    <div className="w-full bg-expensify-darkgreen rounded-full h-2.5">
+                      <div 
+                        className="bg-expensify-green h-2.5 rounded-full transition-all duration-500"
+                        style={{ width: `${skill.level}%` }}
+                      />
+                    </div>
                   </div>
-                  <div className="w-full bg-expensify-buttonGreen rounded-full h-2">
-                    <div 
-                      className="bg-expensify-green h-2 rounded-full transition-all duration-500"
-                      style={{ width: `${skill.level}%` }}
-                    />
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
 
-          <div className="bg-expensify-darkgreen rounded-lg p-8">
-            <h3 className="text-xl font-semibold mb-6 text-expensify-green">DevOps & Cloud</h3>
-            <div className="space-y-4">
-              {skills.devops.map((skill, index) => (
-                <div key={index}>
-                  <div className="flex justify-between mb-1">
-                    <span className="text-expensify-light">{skill.name}</span>
-                    <span className="text-expensify-green">{skill.level}%</span>
+            <div className="bg-expensify-buttonGreen bg-opacity-30 rounded-xl p-8 border border-expensify-green">
+              <h3 className="text-2xl font-semibold mb-8 text-expensify-green">Infrastructure & DevOps</h3>
+              <div className="space-y-6">
+                {skills.infrastructure.map((skill, index) => (
+                  <div key={index}>
+                    <div className="flex justify-between mb-2">
+                      <span className="text-expensify-light text-lg">{skill.name}</span>
+                      <span className="text-expensify-green">{skill.level}%</span>
+                    </div>
+                    <div className="w-full bg-expensify-darkgreen rounded-full h-2.5">
+                      <div 
+                        className="bg-expensify-green h-2.5 rounded-full transition-all duration-500"
+                        style={{ width: `${skill.level}%` }}
+                      />
+                    </div>
                   </div>
-                  <div className="w-full bg-expensify-buttonGreen rounded-full h-2">
-                    <div 
-                      className="bg-expensify-green h-2 rounded-full transition-all duration-500"
-                      style={{ width: `${skill.level}%` }}
-                    />
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
 
-          <div className="bg-expensify-darkgreen rounded-lg p-8">
-            <h3 className="text-xl font-semibold mb-6 text-expensify-green">Other Skills</h3>
-            <div className="space-y-4">
-              {skills.other.map((skill, index) => (
-                <div key={index}>
-                  <div className="flex justify-between mb-1">
-                    <span className="text-expensify-light">{skill.name}</span>
-                    <span className="text-expensify-green">{skill.level}%</span>
+            <div className="bg-expensify-buttonGreen bg-opacity-30 rounded-xl p-8 border border-expensify-green">
+              <h3 className="text-2xl font-semibold mb-8 text-expensify-green">Frontend Skills</h3>
+              <div className="space-y-6">
+                {skills.frontend.map((skill, index) => (
+                  <div key={index}>
+                    <div className="flex justify-between mb-2">
+                      <span className="text-expensify-light text-lg">{skill.name}</span>
+                      <span className="text-expensify-green">{skill.level}%</span>
+                    </div>
+                    <div className="w-full bg-expensify-darkgreen rounded-full h-2.5">
+                      <div 
+                        className="bg-expensify-green h-2.5 rounded-full transition-all duration-500"
+                        style={{ width: `${skill.level}%` }}
+                      />
+                    </div>
                   </div>
-                  <div className="w-full bg-expensify-buttonGreen rounded-full h-2">
-                    <div 
-                      className="bg-expensify-green h-2 rounded-full transition-all duration-500"
-                      style={{ width: `${skill.level}%` }}
-                    />
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>
