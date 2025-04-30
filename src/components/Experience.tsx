@@ -1,92 +1,82 @@
-
 const Experience = () => {
   const experiences = [
     {
-      id: 1,
-      title: "Senior Backend Developer",
-      company: "TechSolutions Inc.",
-      period: "2023 - Present",
-      description: "Leading the development of API systems and database architecture for enterprise clients.",
+      title: "Senior Full Stack Engineer",
+      company: "FinTech Solutions Inc.",
+      period: "2021 - Present",
+      description: "Leading development of financial transaction processing systems and APIs",
       achievements: [
-        "Optimized API response times by 40% through query optimization and caching strategies",
-        "Implemented a microservices architecture that improved system scalability",
-        "Designed and built RESTful APIs serving over 5 million requests daily",
-        "Mentored junior developers on backend best practices and design patterns"
-      ],
-      technologies: ["Node.js", "MongoDB", "Redis", "Docker", "AWS"]
+        "Architected and implemented a high-throughput payment processing system",
+        "Reduced API response times by 60% through optimization",
+        "Led team of 5 developers in modernizing legacy systems",
+        "Implemented real-time transaction monitoring and alerting"
+      ]
     },
     {
-      id: 2,
       title: "Full Stack Developer",
-      company: "Innovate Applications",
-      period: "2021 - 2023",
-      description: "Developed full stack applications with a focus on backend architecture and data processing.",
+      company: "Tech Innovators Ltd",
+      period: "2019 - 2021",
+      description: "Developed and maintained enterprise-scale web applications",
       achievements: [
-        "Built a real-time data processing system handling 100,000+ transactions daily",
-        "Implemented automated testing that increased code coverage from 65% to 90%",
-        "Developed APIs for mobile applications used by 50,000+ users",
-        "Contributed to frontend development using React Native for cross-platform mobile apps"
-      ],
-      technologies: ["JavaScript", "React", "React Native", "Express", "PostgreSQL"]
+        "Built RESTful APIs serving 1M+ requests daily",
+        "Implemented OAuth2 authentication system",
+        "Reduced database query times by 45%",
+        "Mentored junior developers in best practices"
+      ]
     },
     {
-      id: 3,
-      title: "Junior Software Engineer",
-      company: "WebTech Solutions",
-      period: "2020 - 2021",
-      description: "Contributed to backend development for e-commerce and financial applications.",
+      title: "Backend Developer",
+      company: "Digital Solutions Corp",
+      period: "2018 - 2019",
+      description: "Focused on backend systems and database optimization",
       achievements: [
-        "Developed RESTful APIs for user authentication and product management",
-        "Implemented database schema optimizations that improved query performance by 25%",
-        "Created a CI/CD pipeline that reduced deployment time by 70%",
-        "Collaborated with frontend teams to ensure seamless API integration"
-      ],
-      technologies: ["PHP", "Laravel", "MySQL", "Jenkins", "Git"]
+        "Developed microservices architecture for scalability",
+        "Implemented caching strategy reducing load times by 50%",
+        "Created automated testing pipeline",
+        "Contributed to open-source projects"
+      ]
     }
   ];
 
   return (
-    <section id="experience" className="py-16 bg-white">
+    <section id="experience" className="bg-expensify-darkgreen py-20">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">
-          <span className="text-expensify-dark">Professional</span>
-          <span className="text-expensify-green"> Experience</span>
+        <h2 className="text-3xl md:text-4xl font-bold text-expensify-light mb-12 text-center">
+          Professional Experience
         </h2>
 
-        <div className="relative border-l-2 border-expensify-green ml-3 md:ml-6 pl-6 md:pl-8 pb-8">
+        <div className="max-w-4xl mx-auto space-y-8">
           {experiences.map((exp, index) => (
-            <div key={exp.id} className={`mb-12 ${index === experiences.length - 1 ? 'mb-0' : ''}`}>
-              <div className="absolute w-4 h-4 bg-expensify-green rounded-full -left-2 md:-left-2.5 border-4 border-white"></div>
-              <div className="bg-expensify-light rounded-lg shadow-lg p-6">
-                <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
-                  <h3 className="text-xl font-bold text-expensify-dark">{exp.title}</h3>
-                  <div className="text-expensify-green font-medium mt-1 md:mt-0">{exp.period}</div>
+            <div 
+              key={index}
+              className="bg-expensify-buttonGreen bg-opacity-50 rounded-lg p-8 hover:bg-opacity-70 transition duration-300"
+            >
+              <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                <div>
+                  <h3 className="text-xl font-semibold text-expensify-green mb-1">
+                    {exp.title}
+                  </h3>
+                  <p className="text-expensify-light opacity-90 mb-1">
+                    {exp.company}
+                  </p>
                 </div>
-                <div className="mb-4">
-                  <span className="bg-expensify-dark text-white text-sm py-1 px-3 rounded-full">{exp.company}</span>
-                </div>
-                <p className="text-gray-600 mb-4">{exp.description}</p>
-                
-                <h4 className="font-semibold text-expensify-blue mb-2">Key Achievements:</h4>
-                <ul className="space-y-2 mb-4">
-                  {exp.achievements.map((achievement, i) => (
-                    <li key={i} className="flex items-start">
-                      <svg className="w-5 h-5 text-expensify-green mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                      </svg>
-                      <span className="text-gray-700">{achievement}</span>
-                    </li>
-                  ))}
-                </ul>
-                
-                <div className="flex flex-wrap gap-2">
-                  {exp.technologies.map((tech, i) => (
-                    <span key={i} className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
+                <span className="text-expensify-green text-sm md:text-base">
+                  {exp.period}
+                </span>
               </div>
+
+              <p className="text-expensify-light opacity-90 mb-4">
+                {exp.description}
+              </p>
+
+              <ul className="space-y-2">
+                {exp.achievements.map((achievement, i) => (
+                  <li key={i} className="flex items-start">
+                    <span className="text-expensify-green mr-2">→</span>
+                    <span className="text-expensify-light opacity-90">{achievement}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>
