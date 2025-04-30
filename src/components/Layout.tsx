@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Header from './Header';
 // import Footer from './Footer';
 import EasterEgg from './EasterEgg';
@@ -24,6 +24,7 @@ const Layout = () => {
   const [showEasterEgg, setShowEasterEgg] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   const toggleEasterEgg = () => {
     setShowEasterEgg(!showEasterEgg);
@@ -32,6 +33,17 @@ const Layout = () => {
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768); // 768px is the md breakpoint in Tailwind
+    };
+    
+    checkMobile(); // Check initially
+    window.addEventListener('resize', checkMobile); // Listen for resize events
+    
+    return () => window.removeEventListener('resize', checkMobile); // Cleanup
+  }, []);
 
   // Sections that will appear in the left sidebar
   const sections: WorkspaceSection[] = [
@@ -104,11 +116,14 @@ const Layout = () => {
         toggleEasterEgg={toggleEasterEgg} 
         toggleSidebar={toggleSidebar}
         isSidebarOpen={isSidebarOpen}
+        sections={sections}
+        activeSection={activeSection}
+        setActiveSection={setActiveSection}
       />
       
       <div className="flex-1 flex relative overflow-hidden">
-        {/* Left Sidebar - Fixed Position */}
-        <div className="w-80 absolute inset-y-0 left-0 border-r border-[#1A3D32]">
+        {/* Left Sidebar - Only visible on desktop */}
+        <div className="hidden md:block w-80 absolute inset-y-0 left-0 border-r border-[#1A3D32]">
           <div className="h-full flex flex-col overflow-hidden">
           <div className="p-4 flex-grow overflow-y-auto scrollbar-thin scrollbar-thumb-gray-500 hover:scrollbar-thumb-gray-400 scrollbar-track-gray-700">
               <div className="flex items-center space-x-3 mb-6 p-3 bg-expensify-buttonGreen bg-opacity-50 rounded-lg">
@@ -145,10 +160,10 @@ const Layout = () => {
         {/* Collapsible Sidebar */}
         <CollapsibleSidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
 
-        {/* Right Content Area - With left margin to account for fixed sidebar */}
-        <div className="flex-1 pl-80">
-          <main className="h-full overflow-y-auto scrollbar-thin scrollbar-thumb-[#1B4B3A] hover:scrollbar-thumb-[#235646] scrollbar-track-[#0B1615]">
-            <div className="p-6">
+        {/* Right Content Area */}
+        <div className={`flex-1 ${!isMobile ? 'md:pl-80' : ''}`}>
+          <main className="h-full overflow-y-auto pb-20 md:pb-0">
+            <div className="p-4 md:p-6">
               {activeComponent}
             </div>
           </main>

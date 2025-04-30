@@ -58,20 +58,28 @@ const EasterEgg = ({ onClose }: EasterEggProps) => {
   ];
 
   return (
-    <div className="bg-expensify-darkgreen rounded-xl shadow-2xl w-full max-w-3xl overflow-hidden">
+    <div className="bg-expensify-darkgreen rounded-xl shadow-2xl w-[95%] md:w-full max-w-3xl overflow-hidden mx-4 md:mx-0">
       {/* Header */}
-      <div className="bg-[#1A3D32] p-6 border-b border-expensify-green">
-        <div className="flex items-center space-x-3">
-          <span className="text-2xl">🎮</span>
-          <h2 className="text-2xl font-bold text-expensify-light">You Found a Secret!</h2>
+      <div className="bg-[#1A3D32] p-4 md:p-6 border-b border-expensify-green">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center space-x-3">
+            <span className="text-xl md:text-2xl">🎮</span>
+            <h2 className="text-xl md:text-2xl font-bold text-expensify-light">You Found a Secret!</h2>
+          </div>
+          <button 
+            onClick={onClose}
+            className="text-expensify-light hover:text-expensify-green md:hidden"
+          >
+            ×
+          </button>
         </div>
       </div>
 
-      <div className="p-6 max-h-[80vh] overflow-y-auto scrollbar-thin scrollbar-thumb-expensify-green scrollbar-track-expensify-darkgreen">
+      <div className="p-4 md:p-6 max-h-[70vh] md:max-h-[80vh] overflow-y-auto scrollbar-thin scrollbar-thumb-expensify-green scrollbar-track-expensify-darkgreen">
         {/* Fun Facts */}
-        <div className="mb-8">
-          <h3 className="text-xl font-semibold text-expensify-green mb-4">Fun Facts</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="mb-6 md:mb-8">
+          <h3 className="text-lg md:text-xl font-semibold text-expensify-green mb-3 md:mb-4">Fun Facts</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
             {funFacts.map((fact, index) => (
               <div 
                 key={index}
@@ -90,9 +98,9 @@ const EasterEgg = ({ onClose }: EasterEggProps) => {
         </div>
 
         {/* Key Achievements */}
-        <div className="mb-8">
-          <h3 className="text-xl font-semibold text-expensify-green mb-4">Key Achievements</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="mb-6 md:mb-8">
+          <h3 className="text-lg md:text-xl font-semibold text-expensify-green mb-3 md:mb-4">Key Achievements</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
             {achievements.map((achievement, index) => (
               <div 
                 key={index}
@@ -113,9 +121,9 @@ const EasterEgg = ({ onClose }: EasterEggProps) => {
         </div>
 
         {/* Resources */}
-        <div className="mb-8">
-          <h3 className="text-xl font-semibold text-expensify-green mb-4">Tech Arsenal</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="mb-6 md:mb-8">
+          <h3 className="text-lg md:text-xl font-semibold text-expensify-green mb-3 md:mb-4">Tech Arsenal</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
             {resources.map((resource, index) => (
               <div 
                 key={index}
@@ -141,10 +149,10 @@ const EasterEgg = ({ onClose }: EasterEggProps) => {
         </div>
 
         {/* Action Button */}
-        <div className="text-center">
+        <div className="text-center pt-2 md:pt-4">
           <button
             onClick={onClose}
-            className="bg-expensify-green text-expensify-darkgreen font-medium py-3 px-8 rounded-lg hover:bg-opacity-90 transition duration-300"
+            className="w-full md:w-auto bg-expensify-green text-expensify-darkgreen font-medium py-2.5 md:py-3 px-6 md:px-8 rounded-lg hover:bg-opacity-90 transition duration-300"
           >
             Back to Portfolio
           </button>
