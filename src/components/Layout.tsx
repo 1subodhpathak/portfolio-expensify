@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import EasterEgg from './EasterEgg';
-// import Hero from './Hero';
+import Hero from './Hero';
 import About from './About';
 import Skills from './Skills';
 import Projects from './Projects';
@@ -19,7 +19,7 @@ interface WorkspaceSection {
 
 const Layout = () => {
   const [showEasterEgg, setShowEasterEgg] = useState(false);
-  const [activeSection, setActiveSection] = useState('about');
+  const [activeSection, setActiveSection] = useState('hero');
 
   const toggleEasterEgg = () => {
     setShowEasterEgg(!showEasterEgg);
@@ -27,6 +27,12 @@ const Layout = () => {
 
   // Sections that will appear in the left sidebar
   const sections: WorkspaceSection[] = [
+    {
+      id: 'hero',
+      title: "Welcome",
+      icon: "👋",
+      component: <Hero />
+    },
     {
       id: 'about',
       title: "About Me",
