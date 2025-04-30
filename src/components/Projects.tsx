@@ -5,89 +5,99 @@ interface Project {
   title: string;
   description: string;
   technologies: string[];
-  image: string;
-  category: 'backend' | 'fullstack' | 'api';
+  category: 'backend' | 'api' | 'infrastructure';
   features: string[];
   github?: string;
-  demo?: string;
-  metrics: string;
+  metrics: {
+    value: string;
+    label: string;
+  }[];
   link: string;
 }
 
 const Projects = () => {
-  const [filter] = useState<'all' | 'backend' | 'fullstack' | 'api'>('all');
+  const [filter, setFilter] = useState<'all' | 'backend' | 'api' | 'infrastructure'>('all');
   
   const projects: Project[] = [
     {
       id: 1,
-      title: "Financial Transaction API",
-      description: "Built a scalable REST API handling financial transactions with real-time processing and validation.",
-      technologies: ["Node.js", "Express", "PostgreSQL", "Redis"],
-      image: "/images/expense-api.png", // Add placeholder images in your public folder
+      title: "High-Performance Transaction API",
+      description: "Scalable financial transaction processing system built with PHP and Java, handling millions of requests with sub-second response times.",
+      technologies: ["PHP", "Java", "PostgreSQL", "Redis", "RabbitMQ"],
       category: "backend",
       features: [
-        "RESTful API design with comprehensive documentation",
-        "Optimized database queries reducing response time by 40%",
-        "Caching layer for frequently accessed data",
-        "Robust authentication and authorization system",
-        "Comprehensive test coverage with Jest"
+        "Microservices architecture for scalability",
+        "Advanced caching strategies reducing load times by 60%",
+        "Robust error handling and transaction rollback",
+        "Comprehensive logging and monitoring",
+        "Automated failover mechanisms"
       ],
-      github: "https://github.com/yourusername/expense-api",
-      metrics: "Processes 100K+ transactions daily",
+      github: "https://github.com/yourusername/transaction-api",
+      metrics: [
+        { value: "2M+", label: "Daily Transactions" },
+        { value: "99.99%", label: "Uptime" },
+        { value: "<100ms", label: "Avg Response" }
+      ],
       link: "#"
     },
     {
       id: 2,
-      title: "Expense Management Dashboard",
-      description: "React-based dashboard for managing and analyzing expense reports with data visualization.",
-      technologies: ["React", "TypeScript", "D3.js", "Material-UI"],
-      image: "/images/expense-dashboard.png",
-      category: "fullstack",
+      title: "Enterprise API Gateway",
+      description: "Centralized API gateway managing authentication, rate limiting, and request routing for a distributed system.",
+      technologies: ["Java", "Spring Boot", "OAuth2", "Elasticsearch"],
+      category: "api",
       features: [
-        "Real-time updates using WebSockets",
-        "Interactive data visualizations",
-        "Complex data aggregation pipeline",
-        "Role-based access control",
-        "Customizable alert system"
+        "Advanced rate limiting algorithms",
+        "JWT-based authentication system",
+        "Real-time metrics and monitoring",
+        "Custom plugin architecture",
+        "Automated API documentation"
       ],
-      github: "https://github.com/yourusername/expense-dashboard",
-      metrics: "Reduced report processing time by 60%",
+      metrics: [
+        { value: "5M+", label: "Daily Requests" },
+        { value: "50ms", label: "Latency" },
+        { value: "Zero", label: "Downtime" }
+      ],
       link: "#"
     },
     {
       id: 3,
-      title: "Receipt OCR Service",
-      description: "Microservice for extracting data from receipt images using machine learning.",
-      technologies: ["Python", "Flask", "TensorFlow", "AWS Lambda"],
-      image: "/images/receipt-scanner.png",
-      category: "api",
+      title: "Distributed Caching System",
+      description: "Custom-built distributed caching solution for high-throughput financial data access with eventual consistency.",
+      technologies: ["PHP", "Redis", "Memcached", "gRPC"],
+      category: "infrastructure",
       features: [
-        "Machine learning model for receipt data extraction",
-        "Offline-first architecture for mobile users",
-        "Background synchronization with the server",
-        "Secure image storage and processing",
-        "User-friendly interface for reviewing extracted data"
+        "Multi-level caching strategy",
+        "Eventual consistency model",
+        "Automatic cache invalidation",
+        "Cache warming mechanisms",
+        "Real-time cache analytics"
       ],
-      github: "https://github.com/yourusername/receipt-scanner",
-      metrics: "95% accuracy on receipt data extraction",
+      metrics: [
+        { value: "500K", label: "Cache Hits/s" },
+        { value: "95%", label: "Hit Rate" },
+        { value: "<5ms", label: "Access Time" }
+      ],
       link: "#"
     },
     {
       id: 4,
-      title: "Real-time Payment System",
-      description: "Distributed system for processing real-time payments with fault tolerance.",
-      technologies: ["Go", "gRPC", "Kafka", "MongoDB"],
-      image: "/images/expense-api.png",
+      title: "Financial Data Pipeline",
+      description: "Robust ETL pipeline processing and analyzing financial transaction data with real-time aggregation.",
+      technologies: ["Java", "Apache Kafka", "Elasticsearch", "Python"],
       category: "backend",
       features: [
-        "Low-overhead API monitoring",
-        "Customizable performance dashboards",
-        "Anomaly detection algorithms",
-        "Integration with alert systems",
-        "Historical performance data analysis"
+        "Stream processing architecture",
+        "Real-time data aggregation",
+        "Automated data validation",
+        "Error recovery mechanisms",
+        "Comprehensive audit logging"
       ],
-      github: "https://github.com/yourusername/api-monitor",
-      metrics: "Handles 1000+ transactions per second",
+      metrics: [
+        { value: "10TB+", label: "Daily Data" },
+        { value: "100K", label: "Events/sec" },
+        { value: "Real-time", label: "Processing" }
+      ],
       link: "#"
     }
   ];
@@ -97,44 +107,92 @@ const Projects = () => {
     : projects.filter(project => project.category === filter);
 
   return (
-    <section id="projects" className="bg-expensify-darkgreen py-20">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-expensify-light mb-12 text-center">
-          Featured Projects
-        </h2>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {filteredProjects.map((project, index) => (
-            <div key={index} className="bg-expensify-buttonGreen bg-opacity-50 rounded-lg p-6 hover:bg-opacity-70 transition duration-300">
-              <h3 className="text-xl font-semibold text-expensify-green mb-3">
-                {project.title}
-              </h3>
-              <p className="text-expensify-light mb-4 opacity-90">
-                {project.description}
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                {project.technologies.map((tech, techIndex) => (
-                  <span 
-                    key={techIndex}
-                    className="bg-expensify-darkgreen px-3 py-1 rounded-full text-sm text-expensify-green"
-                  >
-                    {tech}
-                  </span>
-                ))}
+    <section id="projects" className="bg-expensify-darkgreen py-24">
+      <div className="container mx-auto px-6">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold text-expensify-light mb-6 text-center">
+            Backend Projects
+          </h2>
+          <p className="text-expensify-light text-center mb-16 max-w-3xl mx-auto opacity-90">
+            Showcasing scalable backend solutions and distributed systems
+          </p>
+
+          <div className="flex justify-center mb-12 space-x-4">
+            {['all', 'backend', 'api', 'infrastructure'].map((category) => (
+              <button
+                key={category}
+                onClick={() => setFilter(category as typeof filter)}
+                className={`px-6 py-2 rounded-lg transition duration-300 ${
+                  filter === category
+                    ? 'bg-expensify-green text-expensify-darkgreen'
+                    : 'bg-expensify-buttonGreen bg-opacity-30 text-expensify-light border border-expensify-green'
+                }`}
+              >
+                {category.charAt(0).toUpperCase() + category.slice(1)}
+              </button>
+            ))}
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {filteredProjects.map((project) => (
+              <div key={project.id} className="bg-expensify-buttonGreen bg-opacity-30 rounded-xl p-8 border border-expensify-green hover:bg-opacity-40 transition duration-300">
+                <h3 className="text-2xl font-semibold text-expensify-green mb-4">
+                  {project.title}
+                </h3>
+                <p className="text-expensify-light mb-6 leading-relaxed">
+                  {project.description}
+                </p>
+                
+                <div className="space-y-6">
+                  <div className="flex flex-wrap gap-2">
+                    {project.technologies.map((tech, index) => (
+                      <span 
+                        key={index}
+                        className="bg-expensify-darkgreen px-4 py-1.5 rounded-lg text-sm text-expensify-green font-medium"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="grid grid-cols-3 gap-4">
+                    {project.metrics.map((metric, index) => (
+                      <div key={index} className="text-center">
+                        <div className="text-expensify-green text-xl font-bold mb-1">{metric.value}</div>
+                        <div className="text-expensify-light text-sm">{metric.label}</div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <ul className="space-y-2">
+                    {project.features.slice(0, 3).map((feature, index) => (
+                      <li key={index} className="text-expensify-light flex items-start">
+                        <span className="text-expensify-green mr-2">•</span>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="flex justify-between items-center pt-4">
+                    {project.github && (
+                      <a 
+                        href={project.github}
+                        className="text-expensify-green hover:text-expensify-light transition duration-300"
+                      >
+                        View Code
+                      </a>
+                    )}
+                    <a 
+                      href={project.link}
+                      className="bg-expensify-green text-expensify-darkgreen px-6 py-2 rounded-lg hover:bg-opacity-90 transition duration-300"
+                    >
+                      Case Study
+                    </a>
+                  </div>
+                </div>
               </div>
-              <div className="flex justify-between items-center">
-                <span className="text-expensify-green text-sm">
-                  {project.metrics}
-                </span>
-                <a 
-                  href={project.link}
-                  className="text-expensify-green hover:text-expensify-light transition duration-300"
-                >
-                  View Details →
-                </a>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

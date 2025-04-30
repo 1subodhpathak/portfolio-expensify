@@ -13,82 +13,104 @@
 const Blog = () => {
   const blogPosts = [
     {
-      title: "Building Scalable Financial Systems",
+      title: "Building High-Performance Financial Systems with PHP and Java",
       date: "2024-03-15",
-      category: "Architecture",
-      excerpt: "Exploring best practices for building robust financial systems that can handle millions of transactions.",
-      readTime: "5 min read",
+      category: "System Architecture",
+      excerpt: "Deep dive into architecting scalable financial systems using PHP and Java, focusing on handling millions of transactions with sub-second latency.",
+      topics: ["Microservices", "Caching Strategies", "Load Balancing"],
+      readTime: "8 min read",
       link: "#"
     },
     {
-      title: "Modern API Design Patterns",
+      title: "Advanced API Design for Financial Applications",
       date: "2024-03-10",
-      category: "Development",
-      excerpt: "A deep dive into RESTful API design patterns and best practices for financial applications.",
-      readTime: "4 min read",
-      link: "#"
-    },
-    {
-      title: "Optimizing Database Performance",
-      date: "2024-03-05",
-      category: "Performance",
-      excerpt: "Tips and techniques for optimizing database queries and improving application performance.",
+      category: "Backend Development",
+      excerpt: "Exploring best practices in designing robust APIs for financial services, including authentication, rate limiting, and error handling.",
+      topics: ["API Security", "Rate Limiting", "Error Handling"],
       readTime: "6 min read",
       link: "#"
     },
     {
-      title: "Security in Financial Applications",
+      title: "Database Optimization Techniques in Financial Systems",
+      date: "2024-03-05",
+      category: "Performance",
+      excerpt: "Comprehensive guide to optimizing database performance in high-throughput financial applications, from query optimization to indexing strategies.",
+      topics: ["Query Optimization", "Indexing", "Partitioning"],
+      readTime: "10 min read",
+      link: "#"
+    },
+    {
+      title: "Implementing Distributed Caching in Enterprise Applications",
       date: "2024-02-28",
-      category: "Security",
-      excerpt: "Essential security practices for developing robust financial applications.",
+      category: "Infrastructure",
+      excerpt: "Learn how to design and implement efficient distributed caching solutions for large-scale enterprise applications.",
+      topics: ["Redis", "Cache Invalidation", "Consistency"],
       readTime: "7 min read",
       link: "#"
     }
   ];
 
   return (
-    <section id="blog" className="bg-expensify-darkgreen py-20">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-expensify-light mb-12 text-center">
-          Technical Insights
-        </h2>
+    <section id="blog" className="bg-expensify-darkgreen py-24">
+      <div className="container mx-auto px-6">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold text-expensify-light mb-6 text-center">
+            Technical Articles
+          </h2>
+          <p className="text-expensify-light text-center mb-16 max-w-3xl mx-auto opacity-90">
+            Sharing insights and experiences in backend development and system architecture
+          </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {blogPosts.map((post, index) => (
-            <article 
-              key={index}
-              className="bg-expensify-buttonGreen bg-opacity-50 rounded-lg p-8 hover:bg-opacity-70 transition duration-300"
-            >
-              <div className="flex justify-between items-start mb-4">
-                <span className="text-expensify-green text-sm">
-                  {post.date}
-                </span>
-                <span className="bg-expensify-darkgreen px-3 py-1 rounded-full text-sm text-expensify-green">
-                  {post.category}
-                </span>
-              </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {blogPosts.map((post, index) => (
+              <article 
+                key={index}
+                className="bg-expensify-buttonGreen bg-opacity-30 rounded-xl p-8 border border-expensify-green hover:bg-opacity-40 transition duration-300"
+              >
+                <div className="flex justify-between items-start mb-6">
+                  <span className="bg-expensify-darkgreen px-4 py-1.5 rounded-lg text-sm text-expensify-green font-medium">
+                    {post.category}
+                  </span>
+                  <span className="text-expensify-light text-sm">
+                    {post.date}
+                  </span>
+                </div>
 
-              <h3 className="text-xl font-semibold text-expensify-green mb-3">
-                {post.title}
-              </h3>
+                <h3 className="text-2xl font-semibold text-expensify-green mb-4">
+                  {post.title}
+                </h3>
 
-              <p className="text-expensify-light opacity-90 mb-4">
-                {post.excerpt}
-              </p>
+                <p className="text-expensify-light leading-relaxed mb-6">
+                  {post.excerpt}
+                </p>
 
-              <div className="flex justify-between items-center mt-6">
-                <span className="text-expensify-light opacity-75 text-sm">
-                  {post.readTime}
-                </span>
-                <a 
-                  href={post.link}
-                  className="text-expensify-green hover:text-expensify-light transition duration-300"
-                >
-                  Read More →
-                </a>
-              </div>
-            </article>
-          ))}
+                <div className="space-y-6">
+                  <div className="flex flex-wrap gap-2">
+                    {post.topics.map((topic, i) => (
+                      <span 
+                        key={i}
+                        className="bg-expensify-darkgreen px-3 py-1 rounded-lg text-sm text-expensify-green opacity-75"
+                      >
+                        {topic}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="flex justify-between items-center pt-4 border-t border-expensify-green border-opacity-30">
+                    <span className="text-expensify-light text-sm">
+                      {post.readTime}
+                    </span>
+                    <a 
+                      href={post.link}
+                      className="bg-expensify-green text-expensify-darkgreen px-4 py-1.5 rounded-lg hover:bg-opacity-90 transition duration-300 text-sm font-medium"
+                    >
+                      Read Article
+                    </a>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </div>
     </section>
