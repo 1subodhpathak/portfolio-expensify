@@ -28,15 +28,17 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="bg-expensify-darkgreen py-24">
+    <section className="space-y-8">
+      {/* Header */}
+      <div className="bg-expensify-darkgreen p-6 rounded-lg border border-[#1A3D32]">
+        <h1 className="text-4xl font-bold text-expensify-light mb-4">Get in Touch</h1>
+        <p className="text-expensify-light opacity-90">
+          Interested in discussing backend development opportunities at Expensify
+        </p>
+      </div>
+
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-expensify-light mb-6 text-center">
-            Get in Touch
-          </h2>
-          <p className="text-expensify-light text-center mb-16 max-w-3xl mx-auto opacity-90">
-            Interested in discussing backend development opportunities at Expensify
-          </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             <div className="bg-expensify-buttonGreen bg-opacity-30 rounded-xl p-8 border border-expensify-green">

@@ -42,16 +42,17 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="bg-expensify-darkgreen py-24">
+    <section className="space-y-8">
+      {/* Header */}
+      <div className="bg-expensify-darkgreen p-6 rounded-lg border border-[#1A3D32]">
+        <h1 className="text-4xl font-bold text-expensify-light mb-4">Professional Experience</h1>
+        <p className="text-expensify-light opacity-90">
+          Specialized in building and scaling backend systems for financial applications
+        </p>
+      </div>
+
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-expensify-light mb-6 text-center">
-            Professional Experience
-          </h2>
-          <p className="text-expensify-light text-center mb-16 max-w-3xl mx-auto opacity-90">
-            Specialized in building and scaling backend systems for financial applications
-          </p>
-
           <div className="space-y-10">
             {experiences.map((exp, index) => (
               <div 
