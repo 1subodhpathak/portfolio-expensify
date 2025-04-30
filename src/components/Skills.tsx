@@ -30,17 +30,18 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className="bg-expensify-darkgreen py-24">
+    <section className="space-y-8">
+      {/* Header */}
+      <div className="bg-expensify-darkgreen p-6 rounded-lg border border-[#1A3D32]">
+        <h1 className="text-4xl font-bold text-expensify-light mb-4">Technical Expertise</h1>
+        <p className="text-expensify-light opacity-90">
+          Specialized in backend development with a focus on building scalable systems,
+          optimizing APIs, and creating robust enterprise solutions.
+        </p>
+      </div>
+
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-expensify-light mb-6 text-center">
-            Technical Expertise
-          </h2>
-          <p className="text-expensify-light text-center mb-16 max-w-3xl mx-auto opacity-90">
-            Specialized in backend development with a focus on building scalable systems,
-            optimizing APIs, and creating robust enterprise solutions.
-          </p>
-
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             <div className="bg-expensify-buttonGreen bg-opacity-30 rounded-xl p-8 border border-expensify-green">
               <h3 className="text-2xl font-semibold mb-8 text-expensify-green">Backend Development</h3>

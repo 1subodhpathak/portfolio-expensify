@@ -107,16 +107,17 @@ const Projects = () => {
     : projects.filter(project => project.category === filter);
 
   return (
-    <section id="projects" className="bg-expensify-darkgreen py-24">
+    <section className="space-y-8">
+      {/* Header */}
+      <div className="bg-expensify-darkgreen p-6 rounded-lg border border-[#1A3D32]">
+        <h1 className="text-4xl font-bold text-expensify-light mb-4">Projects</h1>
+        <p className="text-expensify-light opacity-90">
+          Showcasing my expertise in building scalable applications
+        </p>
+      </div>
+
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-expensify-light mb-6 text-center">
-            Backend Projects
-          </h2>
-          <p className="text-expensify-light text-center mb-16 max-w-3xl mx-auto opacity-90">
-            Showcasing scalable backend solutions and distributed systems
-          </p>
-
           <div className="flex justify-center mb-12 space-x-4">
             {['all', 'backend', 'api', 'infrastructure'].map((category) => (
               <button
