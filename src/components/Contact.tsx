@@ -107,16 +107,16 @@ const Contact = () => {
                   <h4 className="text-expensify-green font-medium mb-4">Connect With Me</h4>
                   <div className="space-y-4">
                     <a 
-                      href="mailto:your.email@example.com" 
+                      href="mailto:pathaksubodh945@gmail.com" 
                       className="flex items-center gap-4 text-expensify-light hover:text-expensify-green transition duration-300"
                     >
                       <span className="w-8 h-8 bg-expensify-darkgreen rounded-lg flex items-center justify-center">
                         📧
                       </span>
-                      <span>your.email@example.com</span>
+                      <span>pathaksubodh945@gmail.com</span>
                     </a>
                     <a 
-                      href="https://linkedin.com/in/yourprofile" 
+                      href="https://www.linkedin.com/in/subodh-pathak-799305228/" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="flex items-center gap-4 text-expensify-light hover:text-expensify-green transition duration-300"
@@ -127,7 +127,7 @@ const Contact = () => {
                       <span>LinkedIn Profile</span>
                     </a>
                     <a 
-                      href="https://github.com/yourusername" 
+                      href="https://github.com/1subodhpathak" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="flex items-center gap-4 text-expensify-light hover:text-expensify-green transition duration-300"

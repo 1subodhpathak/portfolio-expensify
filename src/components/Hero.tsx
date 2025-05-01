@@ -92,7 +92,7 @@ const Hero = () => {
             <p className="text-expensify-light">Enterprise Projects</p>
           </div>
           <div className="bg-expensify-buttonGreen p-6 rounded-lg border border-expensify-green bg-opacity-30">
-            <h3 className="text-expensify-green font-bold text-3xl mb-2">90+</h3>
+            <h3 className="text-expensify-green font-bold text-3xl mb-2">100+</h3>
             <p className="text-expensify-light">GitHub Contributions</p>
           </div>
         </div>
