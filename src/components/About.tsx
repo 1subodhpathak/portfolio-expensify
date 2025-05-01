@@ -1,4 +1,3 @@
-// src/components/About.tsx
 const About = () => {
   return (
     <section className="space-y-8">
@@ -6,7 +5,7 @@ const About = () => {
       <div className="bg-expensify-darkgreen p-6 rounded-lg border border-[#1A3D32]">
         <h1 className="text-4xl font-bold text-expensify-light mb-4">About Me</h1>
         <p className="text-expensify-light opacity-90">
-          A backend-focused engineer passionate about building scalable financial solutions
+          A backend-focused full stack engineer passionate about building efficient, scalable systems that solve real-world financial problems.
         </p>
       </div>
 
@@ -18,14 +17,17 @@ const About = () => {
               <h3 className="text-2xl font-semibold text-expensify-green mb-6">Professional Journey</h3>
               <div className="space-y-4">
                 <p className="text-expensify-light leading-relaxed">
-                  I'm a backend-focused engineer with 3+ years of experience in building robust systems and optimizing APIs. 
-                  My expertise lies in creating efficient, scalable solutions that handle complex business logic and high-volume transactions.
+                  I'm a backend-focused full stack developer with over 3 years of experience designing systems that process financial data in real-time, manage transactions at scale, and deliver high availability across user-critical workflows.
                 </p>
                 <p className="text-expensify-light leading-relaxed">
-                  With a strong foundation in PHP and Java, coupled with modern technologies, I specialize in developing enterprise-grade applications that prioritize performance, security, and maintainability.
+                  I've worked with early-stage startups where I owned end-to-end development — 
+                  <span className="text-expensify-green">
+                    from building RESTful APIs and optimizing MongoDB queries to integrating with APIs like Polygon for real-time stock data
+                  </span>
+                  . I've also contributed to open-source projects, deepening my understanding of scalable architectures.
                 </p>
                 <p className="text-expensify-light leading-relaxed">
-                  I'm particularly drawn to Expensify's mission of revolutionizing expense management, and I'm excited about contributing to the backend systems that power this transformation.
+                  Expensify's mission to automate expense management resonates with me deeply — I’m excited about contributing to systems that simplify lives and eliminate inefficiencies through clean, performant code.
                 </p>
               </div>
             </div>
@@ -41,9 +43,9 @@ const About = () => {
                     </div>
                   </div>
                   <div>
-                    <h4 className="text-xl font-medium text-expensify-green mb-2">API Architecture</h4>
+                    <h4 className="text-xl font-medium text-expensify-green mb-2">API Engineering</h4>
                     <p className="text-expensify-light leading-relaxed">
-                      Extensive experience in designing, building, and optimizing scalable APIs that handle millions of requests efficiently.
+                      Hands-on experience building, securing, and optimizing APIs for financial applications, including rate-limited third-party integrations and data-heavy endpoints.
                     </p>
                   </div>
                 </div>
@@ -55,9 +57,9 @@ const About = () => {
                     </div>
                   </div>
                   <div>
-                    <h4 className="text-xl font-medium text-expensify-green mb-2">System Design</h4>
+                    <h4 className="text-xl font-medium text-expensify-green mb-2">Scalable System Design</h4>
                     <p className="text-expensify-light leading-relaxed">
-                      Skilled at architecting robust backend systems with a focus on scalability, performance, and maintainability.
+                      Proven ability to design backend architectures that scale under load, with emphasis on clean abstractions, database indexing, and distributed processing.
                     </p>
                   </div>
                 </div>
@@ -69,9 +71,9 @@ const About = () => {
                     </div>
                   </div>
                   <div>
-                    <h4 className="text-xl font-medium text-expensify-green mb-2">Database Optimization</h4>
+                    <h4 className="text-xl font-medium text-expensify-green mb-2">Data Layer Expertise</h4>
                     <p className="text-expensify-light leading-relaxed">
-                      Expert in database design, query optimization, and implementing efficient data storage solutions.
+                      Strong foundation in schema design, aggregation pipelines, and performance tuning for both relational and NoSQL databases, especially MongoDB.
                     </p>
                   </div>
                 </div>
@@ -83,9 +85,9 @@ const About = () => {
                     </div>
                   </div>
                   <div>
-                    <h4 className="text-xl font-medium text-expensify-green mb-2">Technical Leadership</h4>
+                    <h4 className="text-xl font-medium text-expensify-green mb-2">Cross-functional Collaboration</h4>
                     <p className="text-expensify-light leading-relaxed">
-                      Strong communicator who excels at collaborating with teams and mentoring other developers.
+                      Comfortable leading backend efforts while working closely with frontend teams and product managers to ship features that directly impact users.
                     </p>
                   </div>
                 </div>

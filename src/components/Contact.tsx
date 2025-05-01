@@ -1,9 +1,16 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import emailjs from '@emailjs/browser';
 
 interface ContactForm {
   name: string;
   email: string;
   message: string;
+}
+
+interface FormStatus {
+  loading: boolean;
+  success: string | null;
+  error: string | null;
 }
 
 const Contact = () => {
@@ -13,10 +20,59 @@ const Contact = () => {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [formStatus, setFormStatus] = useState<FormStatus>({
+    loading: false,
+    success: null,
+    error: null
+  });
+
+  useEffect(() => {
+    if (formStatus.success || formStatus.error) {
+      const timer = setTimeout(() => {
+        setFormStatus(prev => ({
+          ...prev,
+          success: null,
+          error: null
+        }));
+      }, 3000);
+
+      // Cleanup timer
+      return () => clearTimeout(timer);
+    }
+  }, [formStatus.success, formStatus.error]);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log('Form submitted:', formData);
+    
+    setFormStatus({ loading: true, success: null, error: null });
+
+    try {
+      const result = await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+
+      if (result.text === 'OK') {
+        setFormStatus({
+          loading: false,
+          success: 'Message sent successfully! I will get back to you soon.',
+          error: null
+        });
+        setFormData({ name: '', email: '', message: '' });
+      }
+    } catch (error) {
+      setFormStatus({
+        loading: false,
+        success: null,
+        error: 'Failed to send message. Please try again later.'
+      });
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -119,6 +175,20 @@ const Contact = () => {
               <h3 className="text-2xl font-semibold text-expensify-green mb-8">
                 Send a Message
               </h3>
+
+              {/* Status Messages */}
+              {formStatus.error && (
+                <div className="mb-6 p-4 bg-red-500 bg-opacity-20 border border-red-500 rounded-lg">
+                  <p className="text-expensify-light">{formStatus.error}</p>
+                </div>
+              )}
+              
+              {formStatus.success && (
+                <div className="mb-6 p-4 bg-expensify-green bg-opacity-20 border border-expensify-green rounded-lg">
+                  <p className="text-expensify-light">{formStatus.success}</p>
+                </div>
+              )}
+
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label className="block text-expensify-light mb-2 font-medium" htmlFor="name">
@@ -164,9 +234,19 @@ const Contact = () => {
                 </div>
                 <button
                   type="submit"
-                  className="w-full bg-expensify-green text-expensify-darkgreen font-medium py-3 px-6 rounded-lg hover:bg-opacity-90 transition duration-300"
+                  disabled={formStatus.loading}
+                  className={`w-full bg-expensify-green text-expensify-darkgreen font-medium py-3 px-6 rounded-lg transition duration-300 flex items-center justify-center
+                    ${formStatus.loading ? 'opacity-70 cursor-not-allowed' : 'hover:bg-opacity-90'}`}
                 >
-                  Send Message
+                  {formStatus.loading ? (
+                    <>
+                      <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-expensify-darkgreen" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      Sending...
+                    </>
+                  ) : 'Send Message'}
                 </button>
               </form>
             </div>

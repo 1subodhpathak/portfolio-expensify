@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+/* Apply Times New Roman font to the entire application */
+* {
+  font-family: 'Times New Roman', Times, serif;
+}
+
 /* Custom color utilities */
 .text-expensify-blue {
   color: #1778FB;

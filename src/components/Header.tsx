@@ -45,9 +45,9 @@ const Header = ({
               </svg>
             </button>
             <div className="flex items-center">
-              <span className="text-expensify-light font-medium">Subodh Pathak</span>
+              <span className="text-expensify-light font-bold text-lg">Subodh Pathak</span>
               <span className="text-expensify-green mx-2">/</span>
-              <span className="text-expensify-light opacity-75">Portfolio</span>
+              <span className="text-expensify-light opacity-75">Website</span>
             </div>
           </div>
 

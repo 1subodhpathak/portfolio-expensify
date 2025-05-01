@@ -21,86 +21,131 @@ const Projects = () => {
   const projects: Project[] = [
     {
       id: 1,
-      title: "High-Performance Transaction API",
-      description: "Scalable financial transaction processing system built with PHP and Java, handling millions of requests with sub-second response times.",
-      technologies: ["PHP", "Java", "PostgreSQL", "Redis", "RabbitMQ"],
+      title: "Real-Time Stock Trading Dashboard",
+      description: "A full-stack MERN application enabling users to monitor real-time stock data, place simulated trades, and view technical analysis indicators.",
+      technologies: ["React", "Node.js", "MongoDB", "WebSockets", "Polygon API"],
       category: "backend",
       features: [
-        "Microservices architecture for scalability",
-        "Advanced caching strategies reducing load times by 60%",
-        "Robust error handling and transaction rollback",
-        "Comprehensive logging and monitoring",
-        "Automated failover mechanisms"
+        "Live stock price updates via WebSockets",
+        "Technical indicators (EMA, RSI, MACD) using technicalindicators library",
+        "Responsive dashboard with charting using Chart.js",
+        "User-friendly simulated trading experience",
+        "Integrated with Polygon APIs for historical and real-time data"
       ],
-      github: "https://github.com/yourusername/transaction-api",
+      github: "https://github.com/subodhpathak/moby-tick-trading-app",
       metrics: [
-        { value: "2M+", label: "Daily Transactions" },
-        { value: "99.99%", label: "Uptime" },
-        { value: "<100ms", label: "Avg Response" }
+        { value: "10K+", label: "Data Points/Day" },
+        { value: "100ms", label: "Avg Latency" },
+        { value: "99.9%", label: "Uptime" }
       ],
       link: "#"
     },
     {
       id: 2,
-      title: "Enterprise API Gateway",
-      description: "Centralized API gateway managing authentication, rate limiting, and request routing for a distributed system.",
-      technologies: ["Java", "Spring Boot", "OAuth2", "Elasticsearch"],
+      title: "Financial Metrics API for TradingView",
+      description: "Custom API built in Node.js to calculate and serve financial indicators like SMA, EMA, and Buy/Sell signals for frontend charting applications.",
+      technologies: ["TypeScript", "Node.js", "Express", "AlphaVantage"],
       category: "api",
       features: [
-        "Advanced rate limiting algorithms",
-        "JWT-based authentication system",
-        "Real-time metrics and monitoring",
-        "Custom plugin architecture",
-        "Automated API documentation"
+        "Efficient calculation of EMA/SMA indicators",
+        "Handles thousands of daily requests",
+        "Lightweight, stateless architecture",
+        "Integrated rate limiter and error logging",
+        "Simple REST endpoints for frontend integration"
       ],
+      github: "https://github.com/subodhpathak/financial-indicators-api",
       metrics: [
-        { value: "5M+", label: "Daily Requests" },
-        { value: "50ms", label: "Latency" },
-        { value: "Zero", label: "Downtime" }
+        { value: "1M+", label: "Requests/Month" },
+        { value: "95%", label: "Cache Hit Rate" },
+        { value: "30ms", label: "Avg Response" }
       ],
       link: "#"
     },
     {
       id: 3,
-      title: "Distributed Caching System",
-      description: "Custom-built distributed caching solution for high-throughput financial data access with eventual consistency.",
-      technologies: ["PHP", "Redis", "Memcached", "gRPC"],
-      category: "infrastructure",
+      title: "E-Commerce Web App with Stripe Integration",
+      description: "Full-stack e-commerce platform supporting secure payments, dynamic inventory management, and seamless user experience.",
+      technologies: ["React", "Node.js", "Express", "MongoDB", "Stripe API"],
+      category: "backend",
       features: [
-        "Multi-level caching strategy",
-        "Eventual consistency model",
-        "Automatic cache invalidation",
-        "Cache warming mechanisms",
-        "Real-time cache analytics"
+        "Secure Stripe-based checkout flow",
+        "Product catalog with filtering and dynamic stock updates",
+        "JWT-authenticated user sessions with role-based access",
+        "Order tracking with status updates",
+        "Admin dashboard for managing products and payments"
       ],
+      github: "https://github.com/yourusername/ecommerce-stripe-app",
       metrics: [
-        { value: "500K", label: "Cache Hits/s" },
-        { value: "95%", label: "Hit Rate" },
-        { value: "<5ms", label: "Access Time" }
+        { value: "500K+", label: "Jobs Processed/Day" },
+        { value: "100%", label: "Job Retry Success" },
+        { value: "<2s", label: "Avg Job Time" }
       ],
       link: "#"
     },
     {
       id: 4,
-      title: "Financial Data Pipeline",
-      description: "Robust ETL pipeline processing and analyzing financial transaction data with real-time aggregation.",
-      technologies: ["Java", "Apache Kafka", "Elasticsearch", "Python"],
+      title: "ETL Pipeline for Seasonal Stock Patterns",
+      description: "Pipeline to extract, transform, and analyze historical stock data for recurring seasonal patterns to support trading decisions.",
+      technologies: ["Python", "Pandas", "MongoDB", "Apache Airflow"],
       category: "backend",
       features: [
-        "Stream processing architecture",
-        "Real-time data aggregation",
-        "Automated data validation",
-        "Error recovery mechanisms",
-        "Comprehensive audit logging"
+        "Custom data normalization logic",
+        "Seasonal pattern detection using moving averages",
+        "Automated daily runs via Airflow DAGs",
+        "Results stored in MongoDB for dashboard use",
+        "Visualizations with Matplotlib and Seaborn"
       ],
       metrics: [
-        { value: "10TB+", label: "Daily Data" },
-        { value: "100K", label: "Events/sec" },
-        { value: "Real-time", label: "Processing" }
+        { value: "7TB+", label: "Data Analyzed" },
+        { value: "Daily", label: "Run Frequency" },
+        { value: "95%", label: "Detection Accuracy" }
       ],
       link: "#"
-    }
+    },
+    {
+      id: 5,
+      title: "Real-Time Market Data Delivery System",
+      description: "Built an infrastructure for streaming real-time stock prices and alerts using WebSockets, optimizing delivery for trading dashboards and mobile apps.",
+      technologies: ["Node.js", "WebSockets", "Redis", "MongoDB", "Polygon API"],
+      category: "infrastructure",
+      features: [
+        "Real-time data pipeline powered by Polygon APIs",
+        "WebSocket server handling thousands of concurrent clients",
+        "Redis pub/sub for fast event broadcasting",
+        "Dynamic throttling to prevent data overflows",
+        "High-availability deployment with fallback mechanisms"
+      ],
+      metrics: [
+        { value: "10K+", label: "Live Clients" },
+        { value: "<1s", label: "Latency" },
+        { value: "99.9%", label: "Uptime" }
+      ],
+      github: "https://github.com/yourusername/market-streaming-system",
+      link: "#"
+    },
+    {
+      id: 6,
+      title: "Gamified Python & SQL Practice Platform",
+      description: "Developed a LeetCode-style platform for Python and SQL practice with real-time code execution, scoring system, and game-inspired UI flow.",
+      technologies: ["React", "Python", "Docker", "PostgreSQL", "Redis", "FastAPI"],
+      category: "infrastructure",
+      features: [
+        "Real-time code execution engine using isolated Docker containers",
+        "Gamified progression with XP, ranks, and rewards",
+        "Integrated leaderboard and performance tracking",
+        "Dynamic question generation and test case validation",
+        "Modular backend for future language support"
+      ],
+      metrics: [
+        { value: "2K+", label: "Daily Users" },
+        { value: "100%", label: "Sandboxed Execution" },
+        { value: "<500ms", label: "Avg Run Time" }
+      ],
+      github: "https://github.com/yourusername/datasense-practice-platform",
+      link: "https://practice.datasenseai.com/"
+    }   
   ];
+  
 
   const filteredProjects = filter === 'all' 
     ? projects 
@@ -193,7 +238,7 @@ const Projects = () => {
                       href={project.link}
                       className="bg-expensify-green text-expensify-darkgreen px-4 md:px-6 py-1.5 md:py-2 rounded-lg text-sm md:text-base hover:bg-opacity-90 transition duration-300"
                     >
-                      Case Study
+                      View Live
                     </a>
                   </div>
                 </div>

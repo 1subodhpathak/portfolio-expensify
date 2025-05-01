@@ -1,45 +1,46 @@
 const Experience = () => {
   const experiences = [
     {
-      title: "Senior Backend Engineer",
-      company: "FinTech Solutions Inc.",
-      period: "2021 - Present",
-      description: "Leading the development of high-performance financial transaction systems",
+      title: "Senior Software Developer",
+      company: "DataSense",
+      period: "2023 - Present",
+      description: "Leading development of scalable, gamified learning platforms focused on SQL and Python skill-building.",
       achievements: [
-        "Architected and implemented a distributed payment processing system handling 2M+ daily transactions",
-        "Reduced API response times by 60% through query optimization and caching strategies",
-        "Led migration from monolithic to microservices architecture improving system scalability",
-        "Implemented real-time monitoring reducing incident response time by 75%"
+        "Architected real-time code execution and grading system using Docker and FastAPI",
+        "Led development of gamified UI and XP-based progression system improving user engagement",
+        "Designed a modular backend enabling multi-language support with isolated execution environments",
+        "Integrated PostgreSQL + Redis caching and optimized leaderboard queries for scale"
       ],
-      technologies: ["PHP", "Java", "PostgreSQL", "Redis", "Kafka"]
+      technologies: ["React", "FastAPI", "PostgreSQL", "Redis", "Docker", "Python"]
     },
     {
-      title: "Backend Developer",
-      company: "Enterprise Systems Ltd",
-      period: "2019 - 2021",
-      description: "Developed scalable backend services for financial applications",
+      title: "Software Developer",
+      company: "Dandalee",
+      period: "2023 (6 months)",
+      description: "Joined as a freelance developer, transitioned to full-time to finalize and launch a Supabase-powered marketplace platform.",
       achievements: [
-        "Built RESTful APIs serving 1M+ daily requests with 99.9% uptime",
-        "Designed and implemented a distributed caching system reducing load times by 45%",
-        "Developed automated failover mechanisms for critical services",
-        "Created comprehensive API documentation and developer guides"
+        "Integrated full transaction flow using Duplo for payment processing",
+        "Implemented Algolia-powered search and result filtering for product discovery",
+        "Optimized performance and accessibility across key marketplace flows",
+        "Delivered backend integration for role-based permissions and messaging in project dashboard"
       ],
-      technologies: ["Java", "Spring Boot", "MySQL", "RabbitMQ", "Docker"]
+      technologies: ["Next.js", "Supabase", "Duplo", "Algolia", "TypeScript", "Tailwind CSS"]
     },
     {
-      title: "Software Engineer",
-      company: "Digital Solutions Corp",
-      period: "2018 - 2019",
-      description: "Focused on backend systems and database optimization",
+      title: "Full Stack Developer",
+      company: "MobyTick Trading",
+      period: "2021 - 2023",
+      description: "Joined as a freelance contributor, transitioned to full-time to lead frontend and backend efforts for a real-time trading platform.",
       achievements: [
-        "Implemented efficient data processing pipelines for financial transactions",
-        "Reduced database query execution time by 50% through optimization",
-        "Developed automated testing framework improving code coverage to 90%",
-        "Created reusable backend components used across multiple projects"
+        "Built and scaled real-time trading dashboards using React and WebSockets",
+        "Integrated multiple Polygon APIs for historical and real-time stock data analysis",
+        "Created seasonal and technical analysis pipelines using Node.js and MongoDB",
+        "Reduced latency of live data feed by 70% using efficient streaming and caching"
       ],
-      technologies: ["PHP", "MongoDB", "Redis", "Jenkins", "AWS"]
+      technologies: ["React", "Node.js", "MongoDB", "WebSocket", "Express.js", "Polygon API"]
     }
   ];
+  
 
   return (
     <section className="space-y-8">
