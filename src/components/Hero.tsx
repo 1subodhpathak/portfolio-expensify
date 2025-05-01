@@ -35,7 +35,7 @@ const Hero = () => {
 
             <div className="flex flex-wrap gap-4">
               <a 
-                href="https://github.com/YOUR_GITHUB_USERNAME"  // Replace YOUR_GITHUB_USERNAME with your actual GitHub username
+                href="https://github.com/1subodhpathak"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-expensify-green text-expensify-darkgreen font-medium py-3 px-8 rounded-md transition duration-300 hover:bg-opacity-90 flex items-center gap-2"
