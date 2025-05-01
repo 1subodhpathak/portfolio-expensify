@@ -6,54 +6,54 @@ const EasterEgg = ({ onClose }: EasterEggProps) => {
   const funFacts = [
     {
       icon: "🚀",
-      title: "Quick Learner",
-      description: "Mastered new technologies and frameworks in record time"
+      title: "Problem Solver",
+      description: "Passionate about automating solutions and optimizing workflows"
     },
     {
       icon: "🌟",
-      title: "Open Source",
-      description: "Active contributor to Expensify and other open source projects"
+      title: "Full Stack Focus",
+      description: "Experience with PHP, React, and cross-stack features"
     },
     {
       icon: "🎯",
-      title: "Problem Solver",
-      description: "Identified and resolved critical production issues"
+      title: "Backend Specialist",
+      description: "3+ years building scalable backend solutions"
     },
     {
       icon: "🤝",
-      title: "Team Player",
-      description: "Excellent communication and collaboration skills"
+      title: "Collaborative",
+      description: "Strong interpersonal and code communication skills"
     }
   ];
 
   const achievements = [
     {
-      number: "48884",
-      label: "PR Number",
-      detail: "Successfully identified and resolved issues in Expensify"
+      number: "3+",
+      label: "Years Experience",
+      detail: "Backend-focused development solving real-world problems"
     },
     {
-      number: "99.9%",
-      label: "System Uptime",
-      detail: "Maintained high availability in production systems"
+      number: "20+",
+      label: "APIs Built",
+      detail: "Designed and optimized for high performance"
     },
     {
-      number: "50+",
-      label: "APIs",
-      detail: "Designed and optimized for scalability"
+      number: "25+",
+      label: "Integrations",
+      detail: "Including accounting systems and payment processors"
     }
   ];
 
   const resources = [
     {
       icon: "📚",
-      title: "Tech Stack",
-      items: ["PHP", "JavaScript", "Node.js", "React", "PostgreSQL"]
+      title: "Core Stack",
+      items: ["PHP", "JavaScript", "React", "C++", "SQL"]
     },
     {
       icon: "🛠️",
-      title: "Tools",
-      items: ["Git", "Docker", "AWS", "Redis", "Kafka"]
+      title: "Expertise",
+      items: ["API Design", "Database Optimization", "Receipt Scanning", "Real-time Processing"]
     }
   ];
 

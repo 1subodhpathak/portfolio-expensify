@@ -12,7 +12,7 @@ interface Project {
     value: string;
     label: string;
   }[];
-  link: string;
+  link?: string;
 }
 
 const Projects = () => {
@@ -32,13 +32,12 @@ const Projects = () => {
         "User-friendly simulated trading experience",
         "Integrated with Polygon APIs for historical and real-time data"
       ],
-      github: "https://github.com/subodhpathak/moby-tick-trading-app",
       metrics: [
         { value: "10K+", label: "Data Points/Day" },
         { value: "100ms", label: "Avg Latency" },
         { value: "99.9%", label: "Uptime" }
       ],
-      link: "#"
+      link: "https://mobyticktrading.com/dashboard"
     },
     {
       id: 2,
@@ -53,13 +52,12 @@ const Projects = () => {
         "Integrated rate limiter and error logging",
         "Simple REST endpoints for frontend integration"
       ],
-      github: "https://github.com/subodhpathak/financial-indicators-api",
       metrics: [
         { value: "1M+", label: "Requests/Month" },
         { value: "95%", label: "Cache Hit Rate" },
         { value: "30ms", label: "Avg Response" }
       ],
-      link: "#"
+      link: "https://mobyticktrading.com/dashboard/bti/indicator"
     },
     {
       id: 3,
@@ -74,13 +72,12 @@ const Projects = () => {
         "Order tracking with status updates",
         "Admin dashboard for managing products and payments"
       ],
-      github: "https://github.com/yourusername/ecommerce-stripe-app",
+      github: "https://github.com/1subodhpathak/ecommerce",
       metrics: [
         { value: "500K+", label: "Jobs Processed/Day" },
         { value: "100%", label: "Job Retry Success" },
         { value: "<2s", label: "Avg Job Time" }
-      ],
-      link: "#"
+      ]
     },
     {
       id: 4,
@@ -100,29 +97,28 @@ const Projects = () => {
         { value: "Daily", label: "Run Frequency" },
         { value: "95%", label: "Detection Accuracy" }
       ],
-      link: "#"
+      link: "https://mobyticktrading.com/"
     },
     {
       id: 5,
-      title: "Real-Time Market Data Delivery System",
-      description: "Built an infrastructure for streaming real-time stock prices and alerts using WebSockets, optimizing delivery for trading dashboards and mobile apps.",
-      technologies: ["Node.js", "WebSockets", "Redis", "MongoDB", "Polygon API"],
+      title: "BattlegroundAI: AI-Powered Political Advertising Platform",
+      description: "BattlegroundAI is an AI-driven platform designed to assist progressive political campaigns in creating effective, platform-specific advertising content by leveraging large language models and voter polling data.",
+      technologies: ["Python", "Streamlit", "Google Gemini API", "Large Language Models (LLMs)"],
       category: "infrastructure",
       features: [
-        "Real-time data pipeline powered by Polygon APIs",
-        "WebSocket server handling thousands of concurrent clients",
-        "Redis pub/sub for fast event broadcasting",
-        "Dynamic throttling to prevent data overflows",
-        "High-availability deployment with fallback mechanisms"
+        "Integration with multiple large language models",
+        "Utilization of recent voter insights for targeted messaging",
+        "Proprietary prompt engineering to safeguard against AI misuse",
+        "Streamlined ad creation process across various platforms",
+        "Access to platform-specific advertising content"
       ],
       metrics: [
-        { value: "10K+", label: "Live Clients" },
-        { value: "<1s", label: "Latency" },
-        { value: "99.9%", label: "Uptime" }
+        { "value": "18%+", "label": "Reduction in CPMs" },
+        { "value": "5,000+", "label": "Messages Created" },
+        { "value": "150+", "label": "Users in Public Beta" }
       ],
-      github: "https://github.com/yourusername/market-streaming-system",
-      link: "#"
-    },
+      link: "https://battleground.datasenseai.com/"
+    },    
     {
       id: 6,
       title: "Gamified Python & SQL Practice Platform",
@@ -141,7 +137,7 @@ const Projects = () => {
         { value: "100%", label: "Sandboxed Execution" },
         { value: "<500ms", label: "Avg Run Time" }
       ],
-      github: "https://github.com/yourusername/datasense-practice-platform",
+      github: "https://github.com/1subodhpathak/coderpad",
       link: "https://practice.datasenseai.com/"
     }   
   ];
@@ -234,12 +230,14 @@ const Projects = () => {
                         View Code
                       </a>
                     )}
-                    <a 
-                      href={project.link}
-                      className="bg-expensify-green text-expensify-darkgreen px-4 md:px-6 py-1.5 md:py-2 rounded-lg text-sm md:text-base hover:bg-opacity-90 transition duration-300"
-                    >
-                      View Live
-                    </a>
+                    {project.link && (
+                      <a 
+                        href={project.link}
+                        className="bg-expensify-green text-expensify-darkgreen px-4 md:px-6 py-1.5 md:py-2 rounded-lg text-sm md:text-base hover:bg-opacity-90 transition duration-300"
+                      >
+                        View Live
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>

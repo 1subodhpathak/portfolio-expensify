@@ -61,7 +61,7 @@ const Header = ({
               ⌨️
             </button>
             <a
-              href="https://github.com/yourusername"
+              href="https://github.com/1subodhpathak/portfolio-expensify"
               target="_blank"
               rel="noopener noreferrer"
               className="text-expensify-light hover:text-expensify-green transition duration-300"
